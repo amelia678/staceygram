@@ -22,10 +22,14 @@ html, body {
      width: 150px;
      height: 150px;
 }
-
+/* direct child */
 .thumbnail-item > img {
     /* the img adapts to its parent */
     /* choose either the height or width, not both */
     width: 100%;
 }
 /* end picture frame technique */
+.thumbnail-container {
+    display: flex;
+    flex-wrap: wrap;
+}
