@@ -2,33 +2,58 @@
 
 const IMAGES = [
 
-"https://images.pexels.com/photos/1287365/pexels-photo-1287365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-"https://images.pexels.com/photos/881142/pexels-photo-881142.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-"https://images.pexels.com/photos/1307503/pexels-photo-1307503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+{url:"https://images.pexels.com/photos/1287365/pexels-photo-1287365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+alt: "awesome photo"
+},
+{url:"https://images.pexels.com/photos/881142/pexels-photo-881142.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+alt: "beautiful black cat"
+},
+{url:"https://images.pexels.com/photos/1307503/pexels-photo-1307503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+alt: "beautiful black cat"
+},
 
 
 
 
-"images/IMG_3520.jpg",
-"images/IMG_3530.jpg",
-"images/IMG_3553.jpg",
-"images/IMG_3562.jpg",
-"images/IMG_3572.jpg",
-"images/IMG_3594.jpg",
-"images/IMG_3609.jpg",
-"images/IMG_3609.jpg",
-"images/2018-10-06 21:30:58.814.jpg",
-"images/2018-08-05 20_00_41.993.jpg"
+{url:"images/IMG_3520.jpg",
+
+},
+{url:"images/IMG_3530.jpg",
+
+},
+{url:"images/IMG_3553.jpg",
+alt: "Stacey's friends"
+},
+{url:"images/IMG_3562.jpg",
+alt: "Stacey's friends"
+},
+{url:"images/IMG_3572.jpg",
+alt: "Stacey's friends"
+},
+{url:"images/IMG_3594.jpg",
+alt: "Stacey's friends"
+},
+{url:"images/IMG_3609.jpg",
+alt: "Stacey's friends"
+},
+{url:"images/2018-10-06 21:30:58.814.jpg", 
+alt: "Stacey's friends"
+},
+{url:"images/2018-08-05 20_00_41.993.jpg",
+alt: "Stacey's friends"
+},
 
 ];
 
 // function that generates an img element
 
-function createImage(imageURL) {
+function createImage(imageInfo) {
     const theImage = document.createElement('img');
 
     // theImage.src = imageURL;
-    theImage.setAttribute('src', imageURL);
+    theImage.setAttribute('src', imageInfo.url);
+    theImage.setAttribute('alt', imageInfo.alt);
+    theImage.setAttribute('title', imageInfo.alt);
 
     // add an event listener to the image
     theImage.addEventListener('click', function (event) {
@@ -45,11 +70,11 @@ function createImage(imageURL) {
     return theImage;
 };
 
-function createThumbnail(imageURL){
+function createThumbnail(imageInfo){
     const theContainer = document.createElement('div');
     theContainer.classList.add('thumbnail-item');
 
-    const image = createImage(imageURL);
+    const image = createImage(imageInfo);
     theContainer.appendChild(image);
 
     return theContainer;
@@ -60,9 +85,9 @@ function createThumbnail(imageURL){
 // loop through the IMAGES array.
 // for each image, call the anonymous function
 // the anon func should expect to receive an image url
-IMAGES.forEach(function (anImageURL) {
+IMAGES.forEach(function (singleImageInfo) {
     // we pass that image URL to our creatThumbnail func
-    let testThumb = createThumbnail(anImageURL);
+    let testThumb = createThumbnail(singleImageInfo);
 
     // then append that thumbnail to the page.
     document.body.appendChild(testThumb);
