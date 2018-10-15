@@ -57,7 +57,7 @@ h1 {
 
 .picture-frame {
     width: 90%;
-    text-align:  center;
+    text-align: center;
     margin: 0 auto;
    
     /* pushes equally on either side */
@@ -75,10 +75,28 @@ h1 {
 .img-container {
     width: 500px;
     height: 500px;
-    margin: 0 auto;
+    
 }
 
 .img-container > img {
     width: 100%;
     height: 100%;
+}
+
+.modal {
+    /*- cover the whoel page
+        -overlap everything
+    -put a seethrough grey co,lor on top of the page
+    -center contents    */
+
+    /* to make this overlap, use position: absolute.
+    THis lets you set coordinates for where exactlty you 
+    wangt to place an element */
+    /* position: absolute;
+    left: 0;
+    top: 0; */
+
+    /* width: 100%;
+    height: 100%; */
+
 }

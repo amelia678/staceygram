@@ -16,10 +16,10 @@ alt: "beautiful black cat"
 
 
 {url:"images/IMG_3520.jpg",
-
+alt: "Stacey's friends"
 },
 {url:"images/IMG_3530.jpg",
-
+alt: "Stacey's friends"
 },
 {url:"images/IMG_3553.jpg",
 alt: "Stacey's friends"
@@ -81,20 +81,20 @@ function createThumbnail(imageInfo){
 };
 
 // let firstImageURL = IMAGES[0];
+const thumbnailContainer = document.querySelector('[data-container]');
+const outputElement = document.querySelector('[data-output]');
 
 // loop through the IMAGES array.
 // for each image, call the anonymous function
 // the anon func should expect to receive an image url
 IMAGES.forEach(function (singleImageInfo) {
     // we pass that image URL to our creatThumbnail func
-    let testThumb = createThumbnail(singleImageInfo);
+    let aThumbnail = createThumbnail(singleImageInfo);
 
     // then append that thumbnail to the page.
-    document.body.appendChild(testThumb);
+    thumbnailContainer.appendChild(aThumbnail);
 } );
 
-// const triggerElement = document.querySelector('[data-container]');
-const outputElement = document.querySelector('[data-output]');
 // const links = document.querySelectorAll('div.thumbnail-item');
 
 // triggerElement.addEventListener('click', function (event) {
