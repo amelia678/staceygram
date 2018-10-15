@@ -55,10 +55,18 @@ function createThumbnail(imageURL){
     return theContainer;
 };
 
+// let firstImageURL = IMAGES[0];
 
-let firstImageURL = IMAGES[0];
-let testThumb = createThumbnail(firstImageURL);
-document.body.appendChild(testThumb);
+// loop through the IMAGES array.
+// for each image, call the anonymous function
+// the anon func should expect to receive an image url
+IMAGES.forEach(function (anImageURL) {
+    // we pass that image URL to our creatThumbnail func
+    let testThumb = createThumbnail(anImageURL);
+
+    // then append that thumbnail to the page.
+    document.body.appendChild(testThumb);
+} );
 
 // const triggerElement = document.querySelector('[data-container]');
 const outputElement = document.querySelector('[data-output]');
