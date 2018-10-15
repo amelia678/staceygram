@@ -11,10 +11,6 @@ alt: "beautiful black cat"
 {url:"https://images.pexels.com/photos/1307503/pexels-photo-1307503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 alt: "beautiful black cat"
 },
-
-
-
-
 {url:"images/IMG_3520.jpg",
 alt: "Stacey's friends"
 },
