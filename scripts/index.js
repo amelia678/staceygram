@@ -37,6 +37,9 @@ function createImage(imageURL) {
     // as 'event.target'
     // And, I can read the 'src' attribute!
        console.log(event.target.src);
+       
+    // I can now set the output image's src to event.target.src
+       outputElement.setAttribute('src', event.target.src );
    });
 
     return theImage;
@@ -52,6 +55,30 @@ function createThumbnail(imageURL){
     return theContainer;
 };
 
+
 let firstImageURL = IMAGES[0];
 let testThumb = createThumbnail(firstImageURL);
 document.body.appendChild(testThumb);
+
+// const triggerElement = document.querySelector('[data-container]');
+const outputElement = document.querySelector('[data-output]');
+// const links = document.querySelectorAll('div.thumbnail-item');
+
+// triggerElement.addEventListener('click', function (event) {
+//     console.log('Hello!');
+//     let newImage = links[i]
+//     outputElement.textContent= newImage;
+// });
+
+// const Lightbox = function () {
+//     const links= document.querySelectorAll('div.lightbox');
+
+//     const preloadImages = function() {
+//         for(var i = 0, i < links.length; i++) {
+//             var a = links[i];
+//             var src = 
+//         }
+//     }
+// }
+
+
