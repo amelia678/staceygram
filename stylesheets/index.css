@@ -16,6 +16,18 @@ html, body {
     height: 100%;
     width: 100%;
 }
+
+body {
+    background-color: palevioletred;
+    
+    
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: lightskyblue;
+    text-align: center;
+}
 /* "picture frame"  technique to resize images*/
 .thumbnail-item {
      /* 1. controls the size pf the image */
