@@ -65,6 +65,9 @@ function createImage(imageInfo) {
        
     // I can now set the output image's src to event.target.src
        outputElement.setAttribute('src', event.target.src );
+    //    modalElement.classList.toggle('modal-hidden');
+    // the remove is more specifiic, so we'll do that
+       modalElement.classList.remove('modal-hidden');
    });
 
     return theImage;
@@ -83,7 +86,8 @@ function createThumbnail(imageInfo){
 // let firstImageURL = IMAGES[0];
 const thumbnailContainer = document.querySelector('[data-container]');
 const outputElement = document.querySelector('[data-output]');
-
+const modalElement = document.querySelector('[data-modal]');
+// console.log(modalElement);
 // loop through the IMAGES array.
 // for each image, call the anonymous function
 // the anon func should expect to receive an image url
@@ -95,13 +99,21 @@ IMAGES.forEach(function (singleImageInfo) {
     thumbnailContainer.appendChild(aThumbnail);
 } );
 
-// const links = document.querySelectorAll('div.thumbnail-item');
+window.addEventListener('keydown', function (event){
+    console.log('you pressed a key');
+    console.log(event);
+    // key: "Escape"
+    // keyCode: 27
 
-// triggerElement.addEventListener('click', function (event) {
-//     console.log('Hello!');
-//     let newImage = links[i]
-//     outputElement.textContent= newImage;
-// });
+    if (event.keyCode === 27) {
+        console.log('I want to hide the modal!');
+        modalElement.classList.add('modal-hidden');
+
+    }
+    
+});
+
+
 
 // const Lightbox = function () {
 //     const links= document.querySelectorAll('div.lightbox');

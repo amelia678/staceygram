@@ -92,11 +92,22 @@ h1 {
     /* to make this overlap, use position: absolute.
     THis lets you set coordinates for where exactlty you 
     wangt to place an element */
-    /* position: absolute;
+    position: absolute;
     left: 0;
-    top: 0; */
+    top: 0; 
 
-    /* width: 100%;
-    height: 100%; */
+    width: 100%; 
+    height: 100%;
 
+    background-color: rgba(0, 0, 0, 0.7);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 200ms ease-in-out;
+}
+
+.modal-hidden {
+    /* display: none; */
+    transform: scale(0.00001);
 }
