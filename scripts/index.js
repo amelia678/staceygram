@@ -100,8 +100,8 @@ IMAGES.forEach(function (singleImageInfo) {
 } );
 
 window.addEventListener('keydown', function (event){
-    console.log('you pressed a key');
-    console.log(event);
+    // console.log('you pressed a key');
+    // console.log(event);
     // key: "Escape"
     // keyCode: 27
 
@@ -112,6 +112,12 @@ window.addEventListener('keydown', function (event){
     }
     
 });
+
+modalElement.addEventListener('click', function (event) {
+    // console.log('you clicked the window');
+    // console.log(event);
+    modalElement.classList.add('modal-hidden');
+})
 
 
 
