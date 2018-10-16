@@ -3,13 +3,13 @@
 const IMAGES = [
 
 {url:"https://images.pexels.com/photos/1287365/pexels-photo-1287365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-alt: "awesome photo"
+alt: "beauiful princess angel"
 },
 {url:"https://images.pexels.com/photos/881142/pexels-photo-881142.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-alt: "beautiful black cat"
+alt: "beautiful princess angel"
 },
 {url:"https://images.pexels.com/photos/1307503/pexels-photo-1307503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-alt: "beautiful black cat"
+alt: "beautiful princess angel"
 },
 {url:"images/IMG_3520.jpg",
 alt: "Stacey's friends"
@@ -40,6 +40,39 @@ alt: "Stacey's friends"
 },
 
 ];
+
+function getCurrentIndex(currentURL) {
+    let index = IMAGES.map(function (i) {
+        return i.url;
+    }).indexOf(currentURL);
+    return index;
+}
+// Array navigation functions//
+function getNextImage(currentURL) {
+    // find the currentURL's index in the IMAGES array
+    let index = getCurrentIndex(currentURL)
+    // increment the index
+    index++;
+    // check if it's within bounds, reset if necessary
+    if (index === IMAGES.length) {
+        index = 0;
+    }
+    // then return the img URL at the new index
+    return IMAGES[index].url;
+}
+
+function getPrevImage(currentURL) {
+    let index = getCurrentIndex(currentURL);
+
+    index--;
+
+    if (index < 0) {
+        index = IMAGES.length - 1;
+
+    }
+
+    return IMAGES[index].url;
+}
 
 // function that generates an img element
 
@@ -107,25 +140,38 @@ window.addEventListener('keydown', function (event){
 
     }
     
+    
 });
 
 modalElement.addEventListener('click', function (event) {
     // console.log('you clicked the window');
     // console.log(event);
     modalElement.classList.add('modal-hidden');
-})
+});
+
+// Add global previous/next listeners
+// keydown is faster than keypress
+window.addEventListener('keydown', function (event) {
+// Key: "ArrowRight"
+    // keyCode: 39
+    // Key: "ArrowLeft"
+    // keyCode: 37
+    if (event.keyCode === 37) {
+        console.log('go to previous image');
+        let curr = outputElement.getAttribute('src');
+        let prev = getPrevImage(curr);
+        outputElement.setAttribute('src', prev );
+
+    } else if (event.keyCode === 39) {
+        console.log('go to the next image');
+        let curr = outputElement.getAttribute('src');
+        let next = getNextImage(curr);
+        outputElement.setAttribute('src', next);
+    }
+});
 
 
 
-// const Lightbox = function () {
-//     const links= document.querySelectorAll('div.lightbox');
 
-//     const preloadImages = function() {
-//         for(var i = 0, i < links.length; i++) {
-//             var a = links[i];
-//             var src = 
-//         }
-//     }
-// }
 
 
