@@ -23,10 +23,31 @@ body {
     
 }
 
+.navbar {
+    border-bottom: 1px solid pink;
+    
+
+    
+}
+
+.my-image {
+    width: 20%;
+    border-radius: 60%;
+    /* border: 1px solid red; */
+    padding: 10px;
+    display: inline;
+
+}
 h1 {
     font-family: 'Lobster', cursive;
     color: darkslateblue;
-    text-align: center;
+    text-align: left;
+}
+
+h3 {
+    font-family: 'Quicksand', sans-serif;
+    text-align: left;
+    /* padding: 10px; */
 }
 /* "picture frame"  technique to resize images*/
 .thumbnail-item {
