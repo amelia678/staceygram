@@ -96,8 +96,8 @@ IMAGES.forEach(function (singleImageInfo) {
 } );
 
 window.addEventListener('keydown', function (event){
-    // console.log('you pressed a key');
-    // console.log(event);
+    console.log('you pressed a key');
+    console.log(event);
     // key: "Escape"
     // keyCode: 27
 
